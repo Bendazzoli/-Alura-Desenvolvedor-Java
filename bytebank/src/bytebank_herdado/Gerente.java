@@ -4,9 +4,9 @@ public class Gerente extends Funcionario{
 	
 	private int senha;
 	
-	@Override
 	public double getBonificacao() {
-	    return super.getBonificacao() + super.getSalario();
+		System.out.println("Chamando o método de bonificacao do Gerente");
+	    return super.getSalario();
 	}
 	
 	public void setSenha(int senha) {
