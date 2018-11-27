@@ -2,7 +2,11 @@ package bytebank_herdado;
 
 public class Administrador extends Funcionario implements Autenticavel{
 
-	private int senha;
+	private AutenticacaoUtil auticador;
+	
+	public Administrador() {
+		this.auticador = new AutenticacaoUtil();
+	}
 	
 	@Override
 	public double getBonificacao() {
@@ -11,15 +15,11 @@ public class Administrador extends Funcionario implements Autenticavel{
 
 	@Override
 	public void setSenha(int senha) {
-		this.senha = senha;
+		this.auticador.setSenha(senha);
 	}
 	
 	@Override
 	public boolean autentica(int senha) {
-		if (this.senha == senha) {
-			return true;
-		} else {
-			return false;
-		}
+		return this.autentica(senha);
 	}
 }
