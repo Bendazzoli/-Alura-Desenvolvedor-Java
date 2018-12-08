@@ -14,5 +14,13 @@ public class TesteContas {
 		
 		System.out.println("CC: " + cc.getSaldo());
 		System.out.println("CP: " + cp.getSaldo());
+		
+		SeguroDeVida segVida = new SeguroDeVida();
+		
+		CalculadoraDeImposto calc = new CalculadoraDeImposto();
+		calc.registraImposto(cc);
+		calc.registraImposto(segVida);
+		
+		System.out.println("Total imposto: " + calc.getTotalImposto());
 	}
 }
